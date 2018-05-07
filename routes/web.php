@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'Ui\HomeController@index')->name('home');
+Route::get('/teams/{team}', 'Ui\TeamController@show')->name('teams');
+Route::get('/teams', 'Ui\TeamController@index')->name('teams');
+Route::get('/players', 'Ui\PlayerController@index')->name('players');
