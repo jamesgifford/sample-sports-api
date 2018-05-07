@@ -15,4 +15,23 @@ class Player extends Model
         'first_name', 
         'last_name'
     ];
+
+    /**
+     * Attributes to hide when serialized.
+     * 
+     * @var array
+     */
+    protected $hidden = [
+        'id'
+    ];
+
+    /**
+     * Get the team the player belongs to.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function team()
+    {
+        return $this->belongsTo('App\Models\Team');
+    }
 }

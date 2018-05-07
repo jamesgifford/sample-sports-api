@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class TeamsTableSeeder extends Seeder
+class PlayersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,10 @@ class TeamsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\Player::class, 50)->create();
+        for ($i = 0; $i < 50; $i++) {
+            factory(App\Models\Player::class)->create([
+                'team_id' => rand(1, 20)
+            ]);
+        }
     }
 }
